@@ -1,0 +1,12 @@
+<h1>Enter a new task</h1>
+
+<form action="/tasks" method="post">
+  <input type="hidden" name="authenticity_token" value="fUrBymmJzFG49YTQE9xKfohttEtW7eHnui2WT6KWpRXT6g9dz73lhZ7bRdHH+RuV/TZoB23OG5l1eo731o8l6g==">
+  <label for="task_title">Title</label>
+  <input type="text" name="title">
+  <label for="task_details">Description</label>
+  <input type="text" name="details">
+  <label for="task_completion">Completed?</label>
+  <input type="checkbox" name="completed">
+  <input type="submit">
+</form>
