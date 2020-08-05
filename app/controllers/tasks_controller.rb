@@ -16,9 +16,9 @@ class TasksController < ApplicationController
   end
 
   def create
-    params[:completed] ? completed = true : completed = false
-    new_task = Task.new(title: params[:title], details: params[:details], completed: completed)
-    # new_task = Task.new(task_params)
+    # params[:completed] ? completed = true : completed = false
+    # new_task = Task.new(title: params[:title], details: params[:details], completed: completed)
+    new_task = Task.new(task_params)
     new_task.save
     redirect_to tasks_path
   end

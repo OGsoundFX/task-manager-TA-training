@@ -24,3 +24,10 @@
   <% end %>
   <%= f.submit class: 'btn btn-primary' %>
 <% end %>
+
+<%= simple_form_for(@task) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :details %>
+  <%= f.input :completed %>
+  <%= f.submit %>
+<% end %>
