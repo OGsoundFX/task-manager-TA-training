@@ -1,11 +1,21 @@
-<h2><%= @task.title %></h2>
+<div class="d-inline-flex p-2">
+  <div>
+    <h2><%= @task.title %></h2>
+  </div>
+  <div class="mark_complete">
+    <p> <%= link_to "Edit task", edit_task_path(@task)%>  </p>
+  </div>
+
+</div>
 <p><%= @task.details %></p>
 <p><% if @task.completed == true %>
       Completed
     <% else %>
-      Not Completed
+      Not Completed - <%= link_to "Mark as completed", mark_complete_path(@task) %>
     <% end %>
 </p>
+
+
 
 <%= link_to "back to list", tasks_path %>
 <%= link_to "back home", root_path %>

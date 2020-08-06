@@ -2,7 +2,7 @@ class TasksController < ApplicationController
   # this line is only for standard forms (not form_for or simple_form_for)
   # skip_before_action :verify_authenticity_token, only: :create
 
-  before_action :find_task, only: :show
+  before_action :find_task, only: [:show, :edit, :mark_complete]
 
   def home
   end
@@ -23,6 +23,18 @@ class TasksController < ApplicationController
     new_task = Task.new(task_params)
     new_task.save
     redirect_to tasks_path
+  end
+
+  def edit
+  end
+
+  def mark_complete
+    @task.completed = true
+    @task.save
+    redirect_to task_path(@task)
+  end
+
+  def update
   end
 
   def destroy
